@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        ResultController.shared.fetchResults(with: "cats", atPage: 1) { (_) in
+        ResultController.shared.fetchResults(with: "dogs", atPage: 1) { (_) in
             
         }
         

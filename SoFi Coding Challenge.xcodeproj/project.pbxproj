@@ -13,6 +13,9 @@
 		7ED7B20221A4771D00042C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED7B20021A4771D00042C79 /* LaunchScreen.storyboard */; };
 		7ED7B20A21A47A2E00042C79 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7B20921A47A2E00042C79 /* Result.swift */; };
 		7EEABEA721A47E1D00A8281A /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEABEA621A47E1D00A8281A /* ResultController.swift */; };
+		7EEABEAA21A48EBC00A8281A /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEABEA921A48EBC00A8281A /* ResultTableViewCell.swift */; };
+		7EEABEAC21A48F1300A8281A /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEABEAB21A48F1300A8281A /* ResultTableViewController.swift */; };
+		7EEABEAE21A4B16400A8281A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEABEAD21A4B16400A8281A /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		7ED7B20321A4771D00042C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED7B20921A47A2E00042C79 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7EEABEA621A47E1D00A8281A /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		7EEABEA921A48EBC00A8281A /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		7EEABEAB21A48F1300A8281A /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		7EEABEAD21A4B16400A8281A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +64,13 @@
 			children = (
 				7ED7B1F721A4771A00042C79 /* AppDelegate.swift */,
 				7ED7B1FB21A4771A00042C79 /* Main.storyboard */,
+				7EEABEAB21A48F1300A8281A /* ResultTableViewController.swift */,
+				7EEABEA921A48EBC00A8281A /* ResultTableViewCell.swift */,
+				7EEABEA821A48DCD00A8281A /* ModelController */,
 				7ED7B20B21A47A3200042C79 /* Model */,
 				7ED7B1FE21A4771D00042C79 /* Assets.xcassets */,
 				7ED7B20021A4771D00042C79 /* LaunchScreen.storyboard */,
 				7ED7B20321A4771D00042C79 /* Info.plist */,
-				7EEABEA621A47E1D00A8281A /* ResultController.swift */,
 			);
 			path = "SoFi Coding Challenge";
 			sourceTree = "<group>";
@@ -71,8 +79,17 @@
 			isa = PBXGroup;
 			children = (
 				7ED7B20921A47A2E00042C79 /* Result.swift */,
+				7EEABEAD21A4B16400A8281A /* Helpers.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7EEABEA821A48DCD00A8281A /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				7EEABEA621A47E1D00A8281A /* ResultController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED7B20A21A47A2E00042C79 /* Result.swift in Sources */,
+				7EEABEAE21A4B16400A8281A /* Helpers.swift in Sources */,
 				7EEABEA721A47E1D00A8281A /* ResultController.swift in Sources */,
+				7EEABEAC21A48F1300A8281A /* ResultTableViewController.swift in Sources */,
+				7EEABEAA21A48EBC00A8281A /* ResultTableViewCell.swift in Sources */,
 				7ED7B1F821A4771A00042C79 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Result Table View Controller-->
         <scene sceneID="JTx-ty-UUg">
             <objects>
-                <tableViewController id="4sA-Df-Z8P" sceneMemberID="viewController">
+                <tableViewController id="4sA-Df-Z8P" customClass="ResultTableViewController" customModule="SoFi_Coding_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UuC-fb-00a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,13 +35,46 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RO4-Sz-Mas">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" rowHeight="430" id="RO4-Sz-Mas" customClass="ResultTableViewCell" customModule="SoFi_Coding_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="430"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RO4-Sz-Mas" id="vbv-8J-EFJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="429.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="5qY-zX-R3o">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="429.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4av-eQ-uba">
+                                                    <rect key="frame" x="171.5" y="0.0" width="32" height="41.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0v-WZ-ve5" customClass="CustomImageView" customModule="SoFi_Coding_Challenge" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="54.5" width="375" height="375"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="V0v-WZ-ve5" secondAttribute="height" id="bfn-OW-4gR"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="V0v-WZ-ve5" firstAttribute="width" secondItem="5qY-zX-R3o" secondAttribute="width" id="ZNm-5d-ZgY"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5qY-zX-R3o" firstAttribute="centerY" secondItem="vbv-8J-EFJ" secondAttribute="centerY" id="Fff-uy-90F"/>
+                                        <constraint firstItem="5qY-zX-R3o" firstAttribute="width" secondItem="vbv-8J-EFJ" secondAttribute="width" id="Pgr-E0-Kqb"/>
+                                        <constraint firstItem="5qY-zX-R3o" firstAttribute="top" secondItem="vbv-8J-EFJ" secondAttribute="top" id="Poe-IV-CAc"/>
+                                        <constraint firstAttribute="bottom" secondItem="5qY-zX-R3o" secondAttribute="bottom" id="XFI-GM-QBn"/>
+                                        <constraint firstItem="5qY-zX-R3o" firstAttribute="centerX" secondItem="vbv-8J-EFJ" secondAttribute="centerX" id="mBj-yH-Zq8"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageOutlet" destination="V0v-WZ-ve5" id="uM1-BK-nrq"/>
+                                    <outlet property="titleOutlet" destination="4av-eQ-uba" id="RAE-kS-y1j"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -50,6 +83,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hXc-RU-tjx"/>
+                    <connections>
+                        <outlet property="searchOutlet" destination="Srl-Do-PR2" id="bQ6-Fk-QQU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lat-EC-LCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
