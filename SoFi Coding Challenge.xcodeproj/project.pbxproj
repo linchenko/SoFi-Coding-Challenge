@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		7ED7B1F821A4771A00042C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7B1F721A4771A00042C79 /* AppDelegate.swift */; };
-		7ED7B1FA21A4771A00042C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7B1F921A4771A00042C79 /* ViewController.swift */; };
 		7ED7B1FD21A4771A00042C79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED7B1FB21A4771A00042C79 /* Main.storyboard */; };
 		7ED7B1FF21A4771D00042C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ED7B1FE21A4771D00042C79 /* Assets.xcassets */; };
 		7ED7B20221A4771D00042C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED7B20021A4771D00042C79 /* LaunchScreen.storyboard */; };
+		7ED7B20A21A47A2E00042C79 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7B20921A47A2E00042C79 /* Result.swift */; };
+		7EEABEA721A47E1D00A8281A /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEABEA621A47E1D00A8281A /* ResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7ED7B1F421A4771A00042C79 /* SoFi Coding Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoFi Coding Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED7B1F721A4771A00042C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7ED7B1F921A4771A00042C79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7ED7B1FC21A4771A00042C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7ED7B1FE21A4771D00042C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7ED7B20121A4771D00042C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ED7B20321A4771D00042C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ED7B20921A47A2E00042C79 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7EEABEA621A47E1D00A8281A /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,22 @@
 			isa = PBXGroup;
 			children = (
 				7ED7B1F721A4771A00042C79 /* AppDelegate.swift */,
-				7ED7B1F921A4771A00042C79 /* ViewController.swift */,
 				7ED7B1FB21A4771A00042C79 /* Main.storyboard */,
+				7ED7B20B21A47A3200042C79 /* Model */,
 				7ED7B1FE21A4771D00042C79 /* Assets.xcassets */,
 				7ED7B20021A4771D00042C79 /* LaunchScreen.storyboard */,
 				7ED7B20321A4771D00042C79 /* Info.plist */,
+				7EEABEA621A47E1D00A8281A /* ResultController.swift */,
 			);
 			path = "SoFi Coding Challenge";
+			sourceTree = "<group>";
+		};
+		7ED7B20B21A47A3200042C79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7ED7B20921A47A2E00042C79 /* Result.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ED7B1FA21A4771A00042C79 /* ViewController.swift in Sources */,
+				7ED7B20A21A47A2E00042C79 /* Result.swift in Sources */,
+				7EEABEA721A47E1D00A8281A /* ResultController.swift in Sources */,
 				7ED7B1F821A4771A00042C79 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
