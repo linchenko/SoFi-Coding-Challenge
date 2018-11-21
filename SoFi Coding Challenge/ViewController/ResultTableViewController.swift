@@ -12,47 +12,46 @@ class ResultTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchOutlet: UISearchBar!
     
-    var results: [Result] = []
+    var results: [Result] = []{
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     var searchText: String?
     var pageNumber: Int?
+    var result: Result?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchOutlet.delegate = self
     }
-//
-//    func loadImages(){
-//        let imagesURLs = results.compactMap({$0.imageURLS?.first})
-//        for imageURL in imagesURLs {
-//            ResultController.shared.fetchImage(imageURL: imageURL) { (image) in
-//                if let image = image {
-//                    self.imageCache.setObject(image, forKey: imageURL.absoluteString as AnyObject)
-//
-//                }
-//            }
-//        }
-//    }
+
     
     
     //MARK: - Search Functionality
     
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        guard let searchText = searchBar.text else {return}
-        results = []
-        self.searchText = searchText
-        self.pageNumber = 1
-        imageCache.removeAllObjects()
-        ResultController.shared.fetchResults(with: searchText, atPage: 1) { (results) in
-            DispatchQueue.main.async {
-                self.results = results?.results ?? []
-                self.tableView.reloadData()
-            }
-        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            self.results = []
+            self.searchText = searchText
+            self.pageNumber = 1
+            imageCache.removeAllObjects()
+            ResultController.shared.fetchResults(with: searchText, atPage: 1) { (results) in
+                DispatchQueue.main.async {
+                    self.results = results?.results ?? []
+                }
+            }
+        }
     }
     
 
@@ -87,6 +86,8 @@ class ResultTableViewController: UITableViewController, UISearchBarDelegate {
     
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    
+        
         if indexPath.row == results.count - 1{
             let spinner = UIActivityIndicatorView(style: .gray)
             spinner.startAnimating()
@@ -115,17 +116,19 @@ class ResultTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
 
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        result = results[indexPath.row]
+        return indexPath
+    }
     
-
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let destVC = segue.destination as? DetailTableViewController else {return}
+        destVC.result = self.result
     }
-    */
+ 
 
 }

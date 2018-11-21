@@ -10,6 +10,8 @@ import UIKit
 
 let imageCache = NSCache<NSString, AnyObject>()
 
+// Custom Image View to assure images are being displayed in the currect cells
+
 class CustomImageView: UIImageView {
     
     var urlString: String?
@@ -18,9 +20,9 @@ class CustomImageView: UIImageView {
         
         urlString = url.absoluteString
         
-        
         image = nil
         
+        //If image has already been loaded, pull from cache instead of loading twice
         if let image = imageCache.object(forKey: NSString(string: url.absoluteString)) as? UIImage {
             self.image = image
             return
@@ -35,7 +37,10 @@ class CustomImageView: UIImageView {
                     self.image = imageToCache
                 }
                 imageCache.setObject(imageToCache, forKey: NSString(string: url.absoluteString))
+                if let error = error {
+                    print ("💩💩 error in file \(#file), function \(#function), \(error),\(error.localizedDescription)💩💩")
+                }
             }
-            }.resume()
+        }.resume()
     }
 }

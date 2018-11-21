@@ -14,6 +14,7 @@ class ResultController {
     static let shared = ResultController()
     private init () {}
     
+    
     func fetchResults(with searchText: String, atPage: Int, completion: @escaping (_ success: Results?)->Void){
         
         guard let baseURL = URL(string: "https://api.imgur.com/3/gallery/search/time") else {completion(nil);return}
@@ -43,25 +44,6 @@ class ResultController {
                 return
             }
         }.resume()
-    }
-    
-    func fetchImage(imageURL: URL?, completion: @escaping (_ image: UIImage?)->Void) {
-        guard let imageURL = imageURL else {completion(nil);return}
-        URLSession.shared.dataTask(with: imageURL, completionHandler: { (data, response, error) in
-            if let error = error {
-                print ("💩💩 error in file \(#file), function \(#function), \(error),\(error.localizedDescription)💩💩")
-                completion(nil)
-                return
-            }
-            if let data = data {
-                DispatchQueue.main.async {
-                    let image = UIImage(data: data)
-                    completion(image)
-                }
-            }
-            
-            
-        }).resume()
     }
     
 }

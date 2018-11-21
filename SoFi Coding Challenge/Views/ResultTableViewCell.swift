@@ -14,18 +14,6 @@ class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageOutlet: CustomImageView!
     
-    var imageURL: URL?{
-        didSet {
-            ResultController.shared.fetchImage(imageURL: imageURL) { (image) in
-                self.imageOutlet.image = image
-            }
-        }
-    }
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 
 }
 

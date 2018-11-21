@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SoFi Coding Challenge/ModelController/ResultController.swift"
-            timestampString = "564449785.2508889"
+            filePath = "SoFi Coding Challenge/DetailTableViewController.swift"
+            timestampString = "564453697.523561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "fetchImage(imageURL:completion:)"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,77 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SoFi Coding Challenge/ModelController/ResultController.swift"
-            timestampString = "564449785.251026"
+            filePath = "SoFi Coding Challenge/DetailTableViewController.swift"
+            timestampString = "564453697.523651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "fetchImage(imageURL:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SoFi_Coding_Challenge.ResultController.fetchImage(imageURL: Swift.Optional&lt;Foundation.URL&gt;, completion: (Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SoFi Coding Challenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/levilinchenko/Desktop/SoFi%20Coding%20Challenge/SoFi%20Coding%20Challenge/ModelController/ResultController.swift"
-                  timestampString = "564449785.4719959"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "112">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SoFi_Coding_Challenge.ResultController.fetchImage(imageURL: Swift.Optional&lt;Foundation.URL&gt;, completion: (Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SoFi Coding Challenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/levilinchenko/Desktop/SoFi%20Coding%20Challenge/SoFi%20Coding%20Challenge/ModelController/ResultController.swift"
-                  timestampString = "564449785.4755141"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SoFi Coding Challenge/ModelController/ResultController.swift"
-            timestampString = "564449785.251111"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "fetchImage(imageURL:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SoFi Coding Challenge/ModelController/ResultController.swift"
-            timestampString = "564449785.251189"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "fetchImage(imageURL:completion:)"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
