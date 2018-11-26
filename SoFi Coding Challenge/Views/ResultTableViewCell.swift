@@ -11,11 +11,6 @@ import UIKit
 class ResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleOutlet: UILabel!
-
     @IBOutlet weak var imageOutlet: CustomImageView!
     
-
 }
-
-
-

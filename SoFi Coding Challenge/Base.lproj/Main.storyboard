@@ -48,6 +48,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0v-WZ-ve5" customClass="CustomImageView" customModule="SoFi_Coding_Challenge" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="375" id="UNB-bC-Ot9"/>
                                                         <constraint firstAttribute="width" secondItem="V0v-WZ-ve5" secondAttribute="height" id="bfn-OW-4gR"/>
                                                     </constraints>
                                                 </imageView>
@@ -59,15 +60,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="V0v-WZ-ve5" firstAttribute="width" secondItem="5qY-zX-R3o" secondAttribute="width" id="ZNm-5d-ZgY"/>
+                                                <constraint firstItem="V0v-WZ-ve5" firstAttribute="centerX" secondItem="5qY-zX-R3o" secondAttribute="centerX" id="dfx-Ik-Lh0"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="5qY-zX-R3o" firstAttribute="leading" secondItem="vbv-8J-EFJ" secondAttribute="leading" id="7jh-po-Jiv"/>
                                         <constraint firstItem="5qY-zX-R3o" firstAttribute="centerY" secondItem="vbv-8J-EFJ" secondAttribute="centerY" id="Fff-uy-90F"/>
-                                        <constraint firstItem="5qY-zX-R3o" firstAttribute="width" secondItem="vbv-8J-EFJ" secondAttribute="width" id="Pgr-E0-Kqb"/>
                                         <constraint firstItem="5qY-zX-R3o" firstAttribute="top" secondItem="vbv-8J-EFJ" secondAttribute="top" id="Poe-IV-CAc"/>
                                         <constraint firstAttribute="bottom" secondItem="5qY-zX-R3o" secondAttribute="bottom" id="XFI-GM-QBn"/>
+                                        <constraint firstAttribute="trailing" secondItem="5qY-zX-R3o" secondAttribute="trailing" id="ih5-pS-Jlt"/>
                                         <constraint firstItem="5qY-zX-R3o" firstAttribute="centerX" secondItem="vbv-8J-EFJ" secondAttribute="centerX" id="mBj-yH-Zq8"/>
                                     </constraints>
                                 </tableViewCellContentView>

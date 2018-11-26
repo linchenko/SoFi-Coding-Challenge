@@ -31,10 +31,7 @@ struct Result: Decodable {
 
 struct Images: Decodable {
     let imageURL: URL
-    
     private enum CodingKeys: String, CodingKey {
         case imageURL = "link"
     }
 }
-
-

@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Image Cache to prevent unessasary reloading of images
+
 let imageCache = NSCache<NSString, AnyObject>()
 
 // Custom Image View to assure images are being displayed in the currect cells
@@ -19,12 +21,15 @@ class CustomImageView: UIImageView {
     func loadImage(with url: URL){
         
         urlString = url.absoluteString
-        
+        let spinner = UIActivityIndicatorView(style: .gray)
+        spinner.startAnimating()
+        spinner.frame = self.frame
+        self.addSubview(spinner)
         image = nil
-        
         //If image has already been loaded, pull from cache instead of loading twice
         if let image = imageCache.object(forKey: NSString(string: url.absoluteString)) as? UIImage {
             self.image = image
+            spinner.removeFromSuperview()
             return
         }
         
@@ -32,9 +37,9 @@ class CustomImageView: UIImageView {
             DispatchQueue.main.async {
                 guard let data = data,
                     let imageToCache = UIImage(data: data) else {return}
-                
                 if self.urlString == url.absoluteString {
                     self.image = imageToCache
+                    spinner.removeFromSuperview()
                 }
                 imageCache.setObject(imageToCache, forKey: NSString(string: url.absoluteString))
                 if let error = error {

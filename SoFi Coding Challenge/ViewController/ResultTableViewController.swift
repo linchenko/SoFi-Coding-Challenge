@@ -19,51 +19,55 @@ class ResultTableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
     }
-    
     var searchText: String?
     var pageNumber: Int?
     var result: Result?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchOutlet.delegate = self
+        ResultController.shared.fetchViral { (results) in
+            DispatchQueue.main.async {
+                self.navigationItem.title = "Viral"
+                self.results = results?.results ?? []
+            }
+        }
     }
-
-    
     
     //MARK: - Search Functionality
-    
-    
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-            self.results = []
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.25) {
             self.searchText = searchText
             self.pageNumber = 1
             imageCache.removeAllObjects()
-            ResultController.shared.fetchResults(with: searchText, atPage: 1) { (results) in
-                DispatchQueue.main.async {
-                    self.results = results?.results ?? []
+            if searchText == "" {
+                ResultController.shared.fetchViral(completion: { (results) in
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = "Viral"
+                        self.results = results?.results ?? []
+                    }
+                })
+            } else {
+                ResultController.shared.fetchResults(with: searchText, atPage: 1) { (results) in
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = searchText
+                        self.results = results?.results ?? []
+                    }
                 }
             }
         }
     }
     
-
     // MARK: - Table view data source
-
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return results.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as? ResultTableViewCell else {return UITableViewCell()}
 
@@ -74,7 +78,6 @@ class ResultTableViewController: UITableViewController, UISearchBarDelegate {
                 cell.imageOutlet.loadImage(with: url)
             }
         }
-
         return cell
     }
     
@@ -93,7 +96,6 @@ class ResultTableViewController: UITableViewController, UISearchBarDelegate {
             spinner.startAnimating()
             spinner.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 44)
             self.tableView.tableFooterView = spinner;
-            
             guard let searchText = searchText,
                 let pageNumber = pageNumber else {return}
             
@@ -111,24 +113,18 @@ class ResultTableViewController: UITableViewController, UISearchBarDelegate {
                     self.tableView.tableFooterView = label
                 }
             }
-            
         }
     }
-
 
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         result = results[indexPath.row]
         return indexPath
     }
     
-    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destVC = segue.destination as? DetailTableViewController else {return}
         destVC.result = self.result
     }
- 
 
 }
