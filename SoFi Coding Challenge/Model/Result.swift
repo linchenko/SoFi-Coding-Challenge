@@ -24,9 +24,7 @@ struct Result: Decodable {
     var imageURLS: [URL]? {
         return images?.compactMap{$0.imageURL}
     }
-    
     let images: [Images]?
-    
 }
 
 struct Images: Decodable {

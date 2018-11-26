@@ -19,7 +19,8 @@ class ResultController {
         let pageNumber = String(atPage)
         var components = URLComponents(url: baseURL.appendingPathComponent(pageNumber), resolvingAgainstBaseURL: true)
         let queryItem = URLQueryItem(name: "q", value: searchText.lowercased())
-        components?.queryItems = [queryItem]
+        let typeQuery = URLQueryItem(name: "q_type", value: "jpg")
+        components?.queryItems = [queryItem, typeQuery]
         guard let url = components?.url else {return}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"

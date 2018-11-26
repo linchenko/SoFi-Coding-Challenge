@@ -39,8 +39,8 @@ class ResultTableViewController: UITableViewController, UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.25) {
+    @objc private func updateSearch(with searchText: String){
+        DispatchQueue.main.async {
             self.searchText = searchText
             self.pageNumber = 1
             imageCache.removeAllObjects()
@@ -60,6 +60,11 @@ class ResultTableViewController: UITableViewController, UISearchBarDelegate {
                 }
             }
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      NSObject.cancelPreviousPerformRequests(withTarget: self)
+        perform(#selector(updateSearch(with:)), with: searchText, afterDelay: 0.25)
     }
     
     // MARK: - Table view data source
